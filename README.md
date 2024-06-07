@@ -77,4 +77,31 @@ const db = new pg.Client({
 
 ## Run the application
 
-``` npm start ```
+``` npx nodemon index.js ```
+
+The server will start and be accessible at http://localhost:3000.
+
+
+## File Structure
+index.js: Main server file, handles routes and database interactions.
+views/: Contains EJS templates for rendering the frontend.
+public/: Contains static assets like CSS and images.
+styles/: Contains CSS files for styling the application.
+
+## Usage
+Open a web browser and navigate to http://localhost:3000.
+Answer the questions by typing the real name of the superhero and hitting submit.
+If your score exceeds the highest score, you will be prompted to enter your name.
+The game will display the highest score and the player who achieved it.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any changes or additions you would like to make.
+
+## License
+This project is open-source and available under the MIT License.
+
+## Acknowledgements
+- Node.js
+- Express.js
+- PostgreSQL
+- EJS
