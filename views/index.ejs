@@ -9,38 +9,39 @@
 </head>
 
 <body id="app">
-  <% if(locals.wasCorrect===false) { %>
+
+  <% if (locals.wasCorrect === false) { %>
     <div class="container" style="opacity:0.9;">
       <h1>Game Over!</h1>
       <h2>Final Score: <%= locals.totalScore %></h2>
+      <h2>Highest Score: <%= locals.highestScore %> by <%= locals.highestScorePlayer %></h2>
       <a href="/" class="restart-button">Restart</a>
     </div>
   <% } else { %>
     <form class="container" action="/submit" method="post">
+      <div class="intro-header">
+        <h1 class = "heading">Welcome to SupesQuiz!</h1>
+        <p class = "intro">Test your knowledge of superheroes and their real names. Try to beat the highest score!</p>
+      </div>
       <div class="horizontal-container">
-        <h3>
-          Total Score:
-          <span id="score">
-            <%= locals.totalScore ? totalScore : "0" %>
-          </span>
-        </h3>
+        <h3>Your Score: <span id="score"><%= locals.totalScore ? locals.totalScore : "0" %></span></h3>
+        <h3>Highest Score: <span id="highestScore"><%= locals.highestScore %> by <%= locals.highestScorePlayer %></span></h3>
       </div>
 
-      <h1 id="heroName">
-        <%= question.superhero %>
-      </h1>
+      <h1 id="heroName"><%= question.superhero %></h1>
       <div class="answer-container">
         <input type="text" name="answer" id="userInput" placeholder="Enter their real name" autofocus autocomplete="off">
       </div>
-      <button type="submit">SUBMIT<% if(locals.wasCorrect){ %>
+      <button type="submit">SUBMIT
+        <% if (locals.wasCorrect) { %>
           <span class="checkmark">✔</span>
-          <% } else if (locals.wasCorrect===false) { %>
-            <span class="cross" id="error">✖</span>
-            <% } %>
+        <% } else if (locals.wasCorrect === false) { %>
+          <span class="cross" id="error">✖</span>
+        <% } %>
       </button>
     </form>
   <% } %>
-  
+
 </body>
 
 </html>

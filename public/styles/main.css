@@ -3,24 +3,41 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
+.intro-header{
+  margin-bottom: 27px;
+  background-color: #FFDA4D;
+  padding: 0 9px 0;
+  border-radius: 3%;
+  text-align: center;
+}
+.intro-header h1{
+  margin-top: 10px;
+}
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   max-width: 40%;
-  height: 300px;
-  margin: 15% auto;
+  height: auto;
+  margin: auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding-top: 10px;
 }
 
-h1{
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -30,11 +47,12 @@ h3 {
 .answer-container {
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 
 input {
   text-align: center;
-  width: 30%;
+  width: 80%;
   margin: 10px auto;
   padding: 10px;
   border: 1px solid #ccc;
@@ -53,14 +71,16 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
+
 .restart-button {
   font-weight: 800;
   letter-spacing: 2px;
   font-size: large;
   display: block;
   width: fit-content;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   padding: 10px;
   background-color: #ffca00;
   color: white;
@@ -72,9 +92,11 @@ button {
 .horizontal-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-button:hover {
+button:hover,
+.restart-button:hover {
   background-color: #ffd500;
 }
 
@@ -84,30 +106,29 @@ button:hover {
 }
 
 .checkmark {
-  color: transparent;
+  color: green;
   animation: checkmark 0.5s ease;
 }
 
 .cross {
-  color: transparent;
+  color: red;
   animation: cross 0.5s ease;
 }
 
 @keyframes checkmark {
-  0% {
+  from {
     color: transparent;
   }
-  100% {
+  to {
     color: green;
   }
 }
 
 @keyframes cross {
-  0% {
+  from {
     color: transparent;
   }
-  100% {
+  to {
     color: red;
   }
 }
-
