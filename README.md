@@ -66,6 +66,7 @@ INSERT INTO game_stats (highest_score, highest_score_player) VALUES (0, '');
 
 Update this part of the code to the new database name and password.
 
+```
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
@@ -73,6 +74,7 @@ const db = new pg.Client({
   password: "your-password",
   port: 5432
 });
+```
 
 
 ## Run the application
